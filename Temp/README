@@ -1,0 +1,20 @@
+1)  For my environment I have been using Katie and NotePad++ to edit my files. The operating systems is Kubuntu 
+with Java OpenJDK8(1.8.0_40 64 bit). My file was originally located in Desktop/tinyos/Apps/Temp. 
+As long as you have my folder inside of the Apps within the Tinyos folder then program should run fine.
+2.) To run my program I use the command  "sudo make iris install mib520,/dev/ttyUSB0 the USB0 
+might change depending on how many motes you have plugged into your computer.
+You have to be in the directory temp for this command to work. The program will then be installed onto the chip. 
+Then to see the output use the command: 
+'sudo java net.tinyos.tools.PrintfClient -comm seria@/dev/ttyX:iris'(X being whatever usb port you are writing too).
+Ignore the first couple values stating "bad packet and that the packet is too long". wait about 5 seconds and you should see the
+words "temperature sent from this mote"and a value in Celsius along with the temperature received from other motes.
+Also if the temperature is below or above a certain amount a message corresponding to the threshold 
+that is set in the program will appear.
+3) When running the java command the temperature that is being sent and the temperature that is being received will output to the
+screen. Putting your finger on the sensor will change the temperature and the output from the screen will
+increase/decrease when you touch the sensor directly as well as moving to a room with a different temp than the original room.
+4) After you have installed and burned the image to the mote a red light should blink showing that a message has been sent 
+from the mote, a yellow light should be blinking showing that a message has been received by that mote.
+The green light should be on showing that the mote has been booted. 
+After you see all of these lights run the java command mentioned in step 2 and the output 
+described in step 2 will be seen on your screen.
